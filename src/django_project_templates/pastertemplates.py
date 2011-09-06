@@ -62,8 +62,8 @@ class NewsAppsProjectTemplate(DjangoTemplate):
     def __init__(self, name):
         append_secret_key(self.vars)
         append_db_password(self.vars)
-        if re.search(r'[a-zA-Z0-9]', name):
-            raise Exception('Use only alphanumeric characters for your project name')
+        #if re.search(r'[^a-zA-Z0-9]', name):
+        #    raise Exception('Use only alphanumeric characters for your project name')
         super(NewsAppsProjectTemplate, self).__init__(name)
 
 class SimpleNewsAppsTemplate(NewsAppsProjectTemplate):
