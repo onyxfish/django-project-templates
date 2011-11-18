@@ -187,7 +187,7 @@ Commands - local
 """
 def local_reset():
     """
-    Reset the local database and Solr instance.
+    Reset the local database instance.
     """
     local_reset_database()
 
