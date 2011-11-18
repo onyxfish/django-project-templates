@@ -11,7 +11,7 @@ env.path = '/home/ubuntu/src/%(project_name)s' % env
 env.log_path = '/var/log/src/%(project_name)s' % env
 env.env_path = '/home/ubuntu/.virtualenvs/%(project_name)s' % env
 env.repo_path = '%(path)s' % env
-env.server_config_path = '/home/ubuntu/nginx/%(project_name)s' % env
+env.server_config_path = '/etc/nginx/sites-enabled/%(project_name)s' % env
 env.python = 'python2.7'
 env.repository_url = "$(repository_url)"
     
@@ -92,7 +92,7 @@ def install_server_conf():
     """
     Install the server config file.
     """
-    sudo('cp %(repo_path)s/config/%(settings)s/nginx %(server_config_path)s' % env)
+    sudo('ln -s %(repo_path)s/config/%(settings)s/nginx %(server_config_path)s' % env)
 
 """
 Commands - deployment

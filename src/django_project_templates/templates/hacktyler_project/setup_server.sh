@@ -42,11 +42,10 @@ service nginx restart
 wget $CONFIG_URL/pg_hba.conf -O /etc/postgresql/9.1/main/pg_hba.conf
 service postgresql restart
 
-# Get code (as normal user)
+# Setup directories 
 sudo -u ubuntu mkdir /home/ubuntu/src
 cd /home/ubuntu/src
 
-# Setup directories 
 mkdir /var/log/sites
 chown -R uwsgi:uwsgi /var/log/sites
 
@@ -55,7 +54,4 @@ chown uwsgi:uwsgi /mnt/uploads
 
 mkdir /mnt/media
 chown uwsgi:uwsgi /mnt/media
-
-# Start serving
-service uwsgi start
 
