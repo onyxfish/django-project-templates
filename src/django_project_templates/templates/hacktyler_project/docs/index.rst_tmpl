@@ -1,0 +1,26 @@
+==========================================
+$(project) |release|
+==========================================
+
+About
+=====
+
+.. include:: ../README
+
+Authors
+=======
+
+.. include:: ../AUTHORS
+
+License
+=======
+
+.. include:: ../COPYING
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+

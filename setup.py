@@ -25,6 +25,7 @@ setup(
         django_cruisecontrol_project=django_project_templates.pastertemplates:DjangoCruiseControlTemplate
         newsapps_project=django_project_templates.pastertemplates:NewsAppsProjectTemplate
         simple_project=django_project_templates.pastertemplates:SimpleNewsAppsTemplate
+        hacktyler_project=django_project_templates.pastertemplates:HackTylerTemplate
     """,
     classifiers = [
         "Intended Audience :: Developers",

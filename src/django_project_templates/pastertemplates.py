@@ -69,3 +69,8 @@ class NewsAppsProjectTemplate(DjangoTemplate):
 class SimpleNewsAppsTemplate(NewsAppsProjectTemplate):
     _template_dir = 'templates/simple_project'
     summary = 'Simplified template for a News Application Django project'
+
+class HackTylerTemplate(NewsAppsProjectTemplate):
+    _template_dir = 'templates/hacktyler_project'
+    summary = 'Even simpler than simple project template modelled on the PANDA project'
+
