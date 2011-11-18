@@ -87,5 +87,5 @@ class HackTylerTemplate(DjangoTemplate):
         append_secret_key(self.vars)
         append_db_password(self.vars)
 
-        super(NewsAppsProjectTemplate, self).__init__(name)
+        super(HackTylerTemplate, self).__init__(name)
 
