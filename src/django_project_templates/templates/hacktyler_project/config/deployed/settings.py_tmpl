@@ -5,6 +5,9 @@ from config.settings import *
 DEBUG = False 
 TEMPLATE_DEBUG = DEBUG
 
+# Use pgpool
+DATABASES['default']['PORT'] = '5433'
+
 # Static media
 STATIC_ROOT = '/mnt/media'
 

@@ -171,13 +171,13 @@ def pgpool_down():
     """
     Stop pgpool so that it won't prevent the database from being rebuilt.
     """
-    sudo('service pgpool stop')
+    sudo('service pgpool2 stop')
     
 def pgpool_up():
     """
     Start pgpool.
     """
-    sudo('service pgpool start')
+    sudo('service pgpool2 start')
 
 """
 Commands - local

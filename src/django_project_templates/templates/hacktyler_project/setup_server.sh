@@ -25,7 +25,7 @@ wget $CONFIG_URL/10periodic -O /etc/apt/apt.conf.d/10periodic
 service unattended-upgrades restart
 
 # Install required packages
-apt-get install --yes git postgresql python2.7-dev git nginx build-essential python-virtualenv libpq-dev memcached pgpool2
+apt-get install --yes git postgresql python2.7-dev git nginx build-essential python-virtualenv libpq-dev memcached pgpool2 libxml2-dev
 pip install uwsgi
 
 # Setup uWSGI
