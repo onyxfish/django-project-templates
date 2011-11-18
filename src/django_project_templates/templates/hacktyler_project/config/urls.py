@@ -13,4 +13,9 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # (r'^admin/', include(admin.site.urls)),
+
+    # Should never be used in production, as nginx will server these paths
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
+        { 'document_root': settings.MEDIA_ROOT,
+            'show_indexes': True }),
 )

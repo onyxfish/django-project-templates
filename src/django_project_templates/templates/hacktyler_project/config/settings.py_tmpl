@@ -46,7 +46,7 @@ STATICFILES_FINDERS = (
 )
 
 # Uploads 
-MEDIA_ROOT = os.path.join(SITE_ROOT, 'media')
+MEDIA_ROOT = '/tmp/$(project)' 
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ${repr($secret_key)}
