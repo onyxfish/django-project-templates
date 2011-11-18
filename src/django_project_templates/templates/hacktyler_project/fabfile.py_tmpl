@@ -42,8 +42,6 @@ Commands - setup
 def setup():
     """
     Setup a fresh virtualenv, install everything we need, and fire up the database.
-    
-    Does NOT perform the functions of deploy().
     """
     require('branch', provided_by=[stable, master, branch])
 
@@ -56,6 +54,8 @@ def setup():
     create_database()
     load_data()
     install_server_conf()
+    collect_static_files()
+    reload_app();
 
 def setup_directories():
     """
@@ -93,6 +93,8 @@ def install_server_conf():
     Install the server config file.
     """
     sudo('ln -s %(repo_path)s/config/%(settings)s/nginx %(server_config_path)s' % env)
+    sudo('ln -s %(repo_path)s/config/%(settings)s/uwsgi.conf /etc/init.d/%(project_name)s.conf' % env)
+    sudo('initctl reload-configuration' % env)
 
 """
 Commands - deployment
@@ -119,7 +121,7 @@ def reload_app():
     """
     Restart the uwsgi server.
     """
-    sudo('service uwsgi restart')
+    sudo('service %(project)s restart' % env)
     
 def update_requirements():
     """

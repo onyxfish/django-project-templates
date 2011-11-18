@@ -70,7 +70,22 @@ class SimpleNewsAppsTemplate(NewsAppsProjectTemplate):
     _template_dir = 'templates/simple_project'
     summary = 'Simplified template for a News Application Django project'
 
-class HackTylerTemplate(NewsAppsProjectTemplate):
+class HackTylerTemplate(DjangoTemplate):
     _template_dir = 'templates/hacktyler_project'
     summary = 'Even simpler than simple project template modelled on the PANDA project'
+
+    vars = [
+        var('deployment_domain',
+            'Domain the site will be served at when deployed.',
+            default="example.com"),
+        var('repository_url',
+            'Git repo where your project will be deployed from.',
+            default="git@git.example.com:example/project_name.git"),
+    ]
+    
+    def __init__(self, name):
+        append_secret_key(self.vars)
+        append_db_password(self.vars)
+
+        super(NewsAppsProjectTemplate, self).__init__(name)
 
