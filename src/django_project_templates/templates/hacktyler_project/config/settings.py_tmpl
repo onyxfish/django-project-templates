@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.humanize',
     'django.contrib.sitemaps',
+    'django.contrib.staticfiles',
     'django.contrib.gis',
 
     'compressor',

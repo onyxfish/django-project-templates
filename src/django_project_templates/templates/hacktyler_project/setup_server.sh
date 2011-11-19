@@ -25,7 +25,7 @@ wget $CONFIG_URL/10periodic -O /etc/apt/apt.conf.d/10periodic
 service unattended-upgrades restart
 
 # Install required packages
-apt-get install --yes git postgresql python2.7-dev git nginx build-essential python-virtualenv libpq-dev memcached pgpool2 libxml2-dev
+apt-get install --yes git postgresql python2.7-dev git nginx build-essential python-virtualenv libpq-dev memcached pgpool2 libxml2-dev libxslt-dev postgresql-9.1-postgis libgdal1-1.7.0
 pip install uwsgi
 
 # Setup uWSGI
@@ -41,6 +41,9 @@ service nginx restart
 # Setup Postgres
 wget $CONFIG_URL/pg_hba.conf -O /etc/postgresql/9.1/main/pg_hba.conf
 service postgresql restart
+
+wget https://docs.djangoproject.com/en/1.3/_downloads/create_template_postgis-1.5.sh
+sudo -u postgres sh create_template_postgis-debian.sh
 
 # Setup directories 
 sudo -u ubuntu mkdir /home/ubuntu/src
