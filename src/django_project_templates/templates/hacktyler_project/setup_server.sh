@@ -40,10 +40,15 @@ service nginx restart
 
 # Setup Postgres
 wget $CONFIG_URL/pg_hba.conf -O /etc/postgresql/9.1/main/pg_hba.conf
+wget $CONFIG_URL/postgresql.conf -O /etc/postgresql/9.1/main/postgresql.conf
 service postgresql restart
 
 wget https://docs.djangoproject.com/en/1.3/_downloads/create_template_postgis-1.5.sh
 sudo -u postgres sh create_template_postgis-debian.sh
+
+# Setup pgpool
+wget $CONFIG_URL/pgpool.conf -O /etc/pgpool2/pgpool.conf
+service pgpool2 restart
 
 # Setup directories 
 sudo -u ubuntu mkdir /home/ubuntu/src
