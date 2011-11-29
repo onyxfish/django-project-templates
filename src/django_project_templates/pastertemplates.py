@@ -2,8 +2,6 @@ from paste.script.templates import Template
 from paste.script.templates import var
 from random import choice
 
-import re
-
 class DjangoTemplate(Template):
 
     vars = [
@@ -77,10 +75,10 @@ class HackTylerTemplate(DjangoTemplate):
     vars = [
         var('deployment_domain',
             'Domain the site will be served at when deployed.',
-            default="example.com"),
+            default="example.hacktyler.com"),
         var('repository_url',
             'Git repo where your project will be deployed from.',
-            default="git@git.example.com:example/project_name.git"),
+            default="git@github.com:hacktyler/hacktyler_project.git"),
     ]
     
     def __init__(self, name):
